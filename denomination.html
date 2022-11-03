@@ -1,0 +1,330 @@
+﻿<html>
+<head>
+<meta charset="utf-8">
+<title>Denomination</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/index.css">
+<!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+	<link rel="stylesheet" href="style.css">
+	    <script src="cal.js"></script> -->
+
+<style>
+    
+.cont {
+	background: #fff;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.2);
+	border-radius: 14px;
+	padding-bottom: 20px;
+	width: 100%;
+	height: 100%;
+	
+}
+.display {
+	width: 100%;
+	height: 100px;
+	padding-block: 10px 425px;
+	margin-top: 20px;
+	margin-bottom: 25px;
+	background: #ededed;
+	border-top-left-radius: 14px;
+	border-top-right-radius: 14px;
+	border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+}
+
+input[type=number],p {
+	outline: none;
+	width: 100%;
+	height: 40px;
+	padding-right: 15px;
+	box-sizing: border-box;
+	border: 1px solid #565656;
+	border-radius: 5px;
+	background: none;
+	color: #000000;
+	text-align: right;
+	font-weight: 70;
+	font-size: 20px;
+	line-height: 38px;
+	margin: 0 0px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: black;}
+
+.red {
+	background: #17c6ee !important;
+	color: #ffffff !important;}
+
+.but{background: #f50057;
+	padding: 0px 10px;
+}
+
+h4{
+	/*ONLY*/
+	/*
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+	background: none;
+	font-weight: 70;
+	font-size: 40px;
+	line-height: 60px;
+	*/
+	font-size: 15px;
+	/*font-weight: bold;*/
+	/*font-family: “”, Georgia, Serif;*/
+	font-family: Arial, Helvetica, sans-serif;
+	letter-spacing: 1px;
+	color: #17c6ee !important;
+	text-align: center;
+	/*width: 10px;
+	height: 90px;*/
+	/*margin: 0 25px;*/
+	/*width: 110px;
+	height: 150px;*/
+	/*float: center;*/
+}
+
+.k {font-size: 20px;
+	font-weight:;
+	/*font-family: “”, Georgia, Serif;*/
+	font-family: Arial, Helvetica, sans-serif;
+	letter-spacing: 1px;
+	color: #ffffff;
+	text-align: center;}
+	
+</style> 
+</head>
+<body>
+	<div class="w3-container w3-display-middle w3-center cont ">
+		<br/><h4 style="color: Black !important; font-size: 25px; "><b>Denomination</b></h4>
+		
+		<div class="display">
+			<div class="w3-row" style="overflow: auto; display:contents !important;;"> 
+			  <div class="w3-col w3-content l4 m4 s4">
+				<h6 style=" text-align:center !important; color: Black !important; font-size: 17px;"><b>Currency</b></h6>
+			  </div>
+			  <div class="w3-col w3-content l4 m4 s4">
+				<h6 style=" text-align:center !important; color: Black !important; font-size: 17px;"><b>Count</b></h6>
+			  </div>
+			  <div class="w3-col w3-content l4 m4 s4">
+				<h6 style=" text-align:center !important; color: Black !important; font-size: 17px;"><b>Amount</b></h6>
+			  </div>
+			</div>
+		<div class="w3-container" >
+<!--2000-->
+			<div class="w3-row" style="overflow: auto">
+			  <div class="w3-col w3-content l4 m4 s4">
+				<input type="number" id="2000" name="text2000" readonly value="2000" placeholder="2000" />
+			  </div>
+			  <div class="w3-col w3-content l4 m4 s4">
+				<input type="number" id="cou2000" name="textcou200" style="background-color: #ffffff;" oninput="mul_number2000(),add_subtotal()" />
+			  </div>
+			  <div class="w3-col w3-content l4 m4 s4">
+				<input type="number" id="tot2000" name="texttot200" readonly />
+			  </div>
+			</div>
+<!--500-->
+			<div class="w3-row">
+			  <div class="w3-col w3-content l4 m4 s4">
+				<input type="number" id="500" name="text500" readonly value="500" placeholder="500"   />
+			  </div>
+			  <div class="w3-col w3-content l4 m4 s4">
+				<input type="number" id="cou500" name="textcou500" style="background-color: #ffffff;" oninput="mul_number500(),add_subtotal()" />
+			  </div>
+			  <div class="w3-col w3-content l4 m4 s4">
+				<input type="number" id="tot500" name="texttot500" readonly />
+			  </div>
+			</div>
+<!--200-->
+			<div class="w3-row">
+			  <div class="w3-col w3-content l4 m4 s4">
+				<input type="number"  id="200" name="text200" readonly value="200"  placeholder="200"  />
+			  </div>
+			  <div class="w3-col w3-content l4 m4 s4">
+				<input type="number"  id="cou200" name="textcou200" style="background-color: #ffffff;" oninput="mul_number200(),add_subtotal()" />
+			  </div>
+			  <div class="w3-col w3-content l4 m4 s4">
+				<input type="number"  id="tot200" name="texttot200" readonly />
+			  </div>
+			</div>
+<!--100-->
+			<div class="w3-row">
+			  <div class="w3-col w3-content l4 m4 s4">
+				<input type="number"  id="100" name="text100" readonly value="100" placeholder="100"  />
+			  </div>
+			  <div class="w3-col w3-content l4 m4 s4">
+				<input type="number"  id="cou100" name="textcou100" style="background-color: #ffffff;" oninput="mul_number100(),add_subtotal()" />
+			  </div>
+			  <div class="w3-col w3-content l4 m4 s4">
+				<input type="number"  id="tot100" name="texttot100" readonly />
+			  </div>
+			</div>
+<!--50-->
+			<div class="w3-row">
+			  <div class="w3-col w3-content l4 m4 s4">
+				<input type="number"  id="50" name="text50" readonly value="50" placeholder="50"  />
+			  </div>
+			  <div class="w3-col w3-content l4 m4 s4">
+				<input type="number"  id="cou50" name="textcou50" style="background-color: #ffffff;" oninput="mul_number50(),add_subtotal()" />
+			  </div>
+			  <div class="w3-col w3-content l4 m4 s4">
+				<input type="number"  id="tot50" name="texttot50" readonly />
+			  </div>
+			</div>
+<!--20-->
+			<div class="w3-row">
+			  <div class="w3-col w3-content l4 m4 s4">
+				<input type="number"  id="20" name="text20" readonly value="20" placeholder="20"  />
+			  </div>
+			  <div class="w3-col w3-content l4 m4 s4">
+				<input type="number"  id="cou20" name="textcou20" style="background-color: #ffffff;" oninput="mul_number20(),add_subtotal()" />
+			  </div>
+			  <div class="w3-col w3-content l4 m4 s4">
+				<input type="number"  id="tot20" name="texttot20" readonly />
+			  </div>
+			</div>
+<!--10-->
+			<div class="w3-row">
+			  <div class="w3-col w3-content l4 m4 s4">
+				<input type="number"  id="10" name="text10" readonly value="10" placeholder="10"  />
+			  </div>
+			  <div class="w3-col w3-content l4 m4 s4">
+				<input type="number"  id="cou10" name="textcou10" style="background-color: #ffffff;" oninput="mul_number10(),add_subtotal()" />
+			  </div>
+			  <div class="w3-col w3-content l4 m4 s4">
+				<input type="number"  id="tot10" name="texttot10" readonly />
+			  </div>
+			</div>
+			<br/>
+<!--Sub Total-->
+			<div class="w3-row">
+			  <div class="w3-col w3-content l8 m8 s8">
+				<input type="number" style="border:none;"  readonly placeholder="Total - "  />
+			  </div>
+			  <div class="w3-col w3-content l4 m4 s4">
+				<input type="number"  id="subtot" name="SUBTOTAL" readonly />
+			  </div>
+			</div>
+		</div>
+		</div>
+		<div class="w3-btn w3-ripple w3-round but">
+				<a href="index.html" style="text-decoration: none;">
+				<h4 style="color: #ffffff !important;">CLEAN</h4></a>
+		</div>
+		<br/><br/><br/>
+		<h4 style="color: #f50057 !important;">With ❤ from <b>Pi Studio</b></h4>
+		<!-- h6 style="font-size: 10px;" > Keep your Internet ON </h6 -->	 
+	</div>
+	
+
+<script>
+var textx1 = document.getElementById("2000");
+var texty1 = document.getElementById("cou2000");
+function mul_number2000() {
+   var first_number1 = parseFloat(textx1.value);
+   if (isNaN(first_number1)) first_number1 = 0;
+   var second_number1 = parseFloat(texty1.value);
+   if (isNaN(second_number1)) second_number1 = 0;
+   var result1 = first_number1 * second_number1;
+   document.getElementById("tot2000").value = result1;
+}
+
+var textx2 = document.getElementById("500");
+var texty2 = document.getElementById("cou500");
+function mul_number500() {
+   var first_number2 = parseFloat(textx2.value);
+   if (isNaN(first_number2)) first_number2 = 0;
+   var second_number2 = parseFloat(texty2.value);
+   if (isNaN(second_number2)) second_number2 = 0;
+   var result2 = first_number2 * second_number2;
+   document.getElementById("tot500").value = result2;
+}
+
+var textx3 = document.getElementById("200");
+var texty3 = document.getElementById("cou200");
+function mul_number200() {
+   var first_number3 = parseFloat(textx3.value);
+   if (isNaN(first_number3)) first_number3 = 0;
+   var second_number3 = parseFloat(texty3.value);
+   if (isNaN(second_number3)) second_number3 = 0;
+   var result3 = first_number3 * second_number3;
+   document.getElementById("tot200").value = result3;
+}
+
+var textx4 = document.getElementById("100");
+var texty4 = document.getElementById("cou100");
+function mul_number100() {
+   var first_number4 = parseFloat(textx4.value);
+   if (isNaN(first_number4)) first_number4 = 0;
+   var second_number4 = parseFloat(texty4.value);
+   if (isNaN(second_number4)) second_number4 = 0;
+   var result4 = first_number4 * second_number4;
+   document.getElementById("tot100").value = result4;
+}
+
+var textx5 = document.getElementById("50");
+var texty5 = document.getElementById("cou50");
+function mul_number50() {
+   var first_number5 = parseFloat(textx5.value);
+   if (isNaN(first_number5)) first_number5 = 0;
+   var second_number5 = parseFloat(texty5.value);
+   if (isNaN(second_number5)) second_number5 = 0;
+   var result5 = first_number5 * second_number5;
+   document.getElementById("tot50").value = result5;
+}
+
+var textx6 = document.getElementById("20");
+var texty6 = document.getElementById("cou20");
+function mul_number20() {
+   var first_number6 = parseFloat(textx6.value);
+   if (isNaN(first_number6)) first_number6 = 0;
+   var second_number6 = parseFloat(texty6.value);
+   if (isNaN(second_number6)) second_number6 = 0;
+   var result6 = first_number6 * second_number6;
+   document.getElementById("tot20").value = result6;
+}
+
+var textx7 = document.getElementById("10");
+var texty7 = document.getElementById("cou10");
+function mul_number10() {
+   var first_number7 = parseFloat(textx7.value);
+   if (isNaN(first_number7)) first_number7 = 0;
+   var second_number7 = parseFloat(texty7.value);
+   if (isNaN(second_number7)) second_number7 = 0;
+   var result7 = first_number7 * second_number7;
+   document.getElementById("tot10").value = result7;
+}
+
+
+var textsub1 = document.getElementById("tot2000");
+var textsub2 = document.getElementById("tot500");
+var textsub3 = document.getElementById("tot200");
+var textsub4 = document.getElementById("tot100");
+var textsub5 = document.getElementById("tot50");
+var textsub6 = document.getElementById("tot20");
+var textsub7 = document.getElementById("tot10");
+function add_subtotal() {
+   var tot1 = parseFloat(textsub1.value);
+   var tot2 = parseFloat(textsub2.value);
+   var tot3 = parseFloat(textsub3.value);
+   var tot4 = parseFloat(textsub4.value);
+   var tot5 = parseFloat(textsub5.value);
+   var tot6 = parseFloat(textsub6.value);
+   var tot7 = parseFloat(textsub7.value);
+   if (isNaN(tot1)) tot1 = 0;
+   if (isNaN(tot2)) tot2 = 0;
+   if (isNaN(tot3)) tot3 = 0;
+   if (isNaN(tot4)) tot4 = 0;
+   if (isNaN(tot5)) tot5 = 0;
+   if (isNaN(tot6)) tot6 = 0;
+   if (isNaN(tot7)) tot7 = 0;
+   var subtotresult =  tot1 + tot2 + tot3 + tot4 + tot5 + tot6 + tot7;
+   document.getElementById("subtot").value = subtotresult;
+}
+</script>
+</body>
+</html>
